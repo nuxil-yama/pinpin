@@ -1,0 +1,13 @@
+@mixin max-1200 {
+  @media (max-width: (1200px)) {
+    @content;
+  }
+}
+
+// @function rem($pixels) {
+//   @return $pixels / 16 * 1rem;
+// }
+
+// @function pxtovw($num, $width: 390) {
+// 	@return math.div($num, $width) * 100vw;
+// }

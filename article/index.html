@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>記事一覧</title>
+  <script>
+    (function (d) {
+      var config = {
+          kitId: 'hrp3ctz',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h = d.documentElement,
+        t = setTimeout(function () {
+          h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+        }, config.scriptTimeout),
+        tk = d.createElement("script"),
+        f = false,
+        s = d.getElementsByTagName("script")[0],
+        a;
+      h.className += " wf-loading";
+      tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+      tk.async = true;
+      tk.onload = tk.onreadystatechange = function () {
+        a = this.readyState;
+        if (f || a && a != "complete" && a != "loaded") return;
+        f = true;
+        clearTimeout(t);
+        try {
+          Typekit.load(config)
+        } catch (e) {}
+      };
+      s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__logo"><a href="/"><img src="/img/logo.svg" alt=""></a></h1>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a class="emoji-link" href="/"><img src="/img/icon_box.svg" alt=""></a></li>
+        <li class="header__nav-item current"><a class="emoji-link" href="/article/"><img src="/img/icon_blog.svg" alt=""></a></li>
+      </ul>
+    </nav>
+    <div class="header__sns">
+      <ul class="header__sns-list">
+        <li class="header__sns-item"><a class="txt-link" href="" target="_blank" rel="noopener noreferrer">twitter</a></li>
+        <li class="header__sns-item"><a class="txt-link" href="" target="_blank" rel="noopener noreferrer">instagram</a></li>
+        <li class="header__sns-item"><a class="txt-link" href="" target="_blank" rel="noopener noreferrer">spotify</a></li>
+        <li class="header__sns-item"><a class="txt-link disabled" href="" target="_blank" rel="noopener noreferrer">discord</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="content archive">
+    <div class="archive__list">
+      <div class="archive__item">
+        <a class="archive__link" href="/article/20230123.html">
+          <div class="archive__ttl">第141巻(後編) なぜ我々はエモに耐え切れないのか</div>
+          <div class="archive__date date">2023.01.19</div>
+        </a>
+      </div>
+      <div class="archive__item">
+        <a class="archive__link" href="">
+          <div class="archive__ttl">第141巻(前編) プロ人間観察家の怖さ</div>
+          <div class="archive__date date">2023.01.17</div>
+        </a>
+      </div>
+      <div class="archive__item">
+        <a class="archive__link" href="">
+          <div class="archive__ttl">第140巻(後編) 2023の生き残り方</div>
+          <div class="archive__date date">2023.01.12</div>
+        </a>
+      </div>
+      <div class="archive__item">
+        <a class="archive__link" href="">
+          <div class="archive__ttl">第140巻(前編) 狂人とは何か</div>
+          <div class="archive__date date">2022.12.28</div>
+        </a>
+      </div>
+      <div class="archive__item">
+        <a class="archive__link" href="">
+          <div class="archive__ttl">第139巻(後編) 奇奇怪怪書籍版 第弐集2023刊行春決定</div>
+          <div class="archive__date date">2022.12.26</div>
+        </a>
+      </div>
+      <div class="archive__item">
+        <a class="archive__link" href="">
+          <div class="archive__ttl">第139巻(前編) 渋谷にサウナなさすぎ問題</div>
+          <div class="archive__date date">2022.12.22</div>
+        </a>
+      </div>
+      <div class="archive__item">
+        <a class="archive__link" href="/article/20230123.html">
+          <div class="archive__ttl">第63巻(中編) 大傑作『アメリカンユートピア』と音楽ライブはなぜ飽きるのか問題</div>
+          <div class="archive__date date">2023.01.19</div>
+        </a>
+      </div>
+      <div class="archive__item">
+        <a class="archive__link" href="/article/20230123.html">
+          <div class="archive__ttl">第69巻(前編) MONO NO AWARE ツアー＆『ルックバック』の音楽的気持ちよさ</div>
+          <div class="archive__date date">2023.01.19</div>
+        </a>
+      </div>
+      <div class="archive__item">
+        <a class="archive__link" href="">
+          <div class="archive__ttl">第48巻 (後編) 『デス・ゾーン 栗城史多のエベレスト劇場』と承認欲求の蟻地獄問題</div>
+          <div class="archive__date date">2023.01.12</div>
+        </a>
+      </div>
+      <div class="archive__item">
+        <a class="archive__link" href="">
+          <div class="archive__ttl">第140巻(前編) 狂人とは何か</div>
+          <div class="archive__date date">2022.12.28</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="pager">
+      <a class="pager__prev emoji-link disabled" href="">
+        <img src="/img/icon_prev.svg" alt="">
+      </a>
+      <ul class="pager__num">
+        <li class="pager__num-item current"><a class="txt-link" href="">01</a></li>
+        <li class="pager__num-item"><a class="txt-link" href="">02</a></li>
+        <li class="pager__num-item"><a class="txt-link" href="">03</a></li>
+        <li class="pager__num-item"><a class="txt-link" href="">04</a></li>
+        <li class="pager__num-item"><a class="txt-link" href="">05</a></li>
+        <li class="pager__num-item"><a class="txt-link" href="">...</a></li>
+      </ul>
+      <a class="pager__next emoji-link" href="">
+        <img src="/img/icon_next.svg" alt="">
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__anime swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/img/icon_box.svg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__copyright">© ONLINE YAMI-ICHI PINPIN</div>
+
+    <div class="footer__sns">
+      <ul class="footer__sns-list">
+        <li class="footer__sns-item">
+          <a class="txt-link" href="" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icon_twitter.svg" alt="">
+          </a>
+        </li>
+        <li class="footer__sns-item">
+          <a class="txt-link" href="" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icon_insta.svg" alt="">
+          </a>
+        </li>
+        <li class="footer__sns-item">
+          <a class="txt-link" href="" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icon_spotify.svg" alt="">
+          </a>
+        </li>
+        <li class="footer__sns-item">
+          <a class="txt-link disabled" href="" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icon_discord.svg" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+<script>
+  const mySwiperWrapper = document.querySelector('.swiper-wrapper');
+  const swiper = new Swiper(".swiper", {
+    loop: true,
+    slidesPerView: 5,
+    breakpoints: {
+      768: {
+        slidesPerView: 12,
+      },
+      1650: {
+        slidesPerView: 15,
+      },
+    },
+    speed: 1500,
+    allowTouchMove: false,
+    autoplay: {
+      delay: 0,
+    },
+    spaceBetween: 25,
+    on: {
+      slideChangeTransitionStart: function () {
+        mySwiperWrapper.style.transitionTimingFunction = 'linear';
+      },
+      resize: function () {
+        swiper.autoplay.start();
+      }
+    }
+  });
+</script>
+
+</html>

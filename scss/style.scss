@@ -1,0 +1,649 @@
+@charset "UTF-8";
+
+
+/*====================================================
+
+base
+
+====================================================*/
+
+html,
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Noto Serif JP', serif;
+  font-size: rem(16);
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/*====================================================
+
+common
+
+====================================================*/
+
+.content {
+  margin-top: 160px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include sp {
+    margin: 0 auto;
+  }
+}
+
+.disabled {
+  opacity: .3;
+  pointer-events: none;
+}
+
+.date {
+  font-family: $courier;
+  font-size: rem(12);
+  letter-spacing: -0.08em;
+}
+
+.txt-link {
+  font-family: $courier;
+
+  @include pc {
+    &:hover {
+      opacity: .6;
+    }
+  }
+}
+
+.emoji-link {
+  @include pc {
+    &:hover img {
+      animation: hover-emoji .15s infinite;
+
+      @keyframes hover-emoji {
+        0% {
+          transform: rotate(-3deg);
+        }
+
+        50% {
+          transform: rotate(-3deg);
+        }
+
+        51% {
+          transform: rotate(3deg);
+        }
+
+        99% {
+          transform: rotate(3deg);
+        }
+
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__prev,
+  &__next {
+    width: rem(56);
+    flex-shrink: 0;
+
+    @include sp {
+      width: rem(48);
+    }
+  }
+
+  &__num {
+    display: flex;
+    gap: 0 20px;
+    margin: 0 40px;
+
+    @include sp {
+      gap: 0 16px;
+      margin: 0 20px;
+    }
+
+    &-item {
+      position: relative;
+
+      &.current::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: rem(35);
+        height: rem(24);
+        background: url(/img/icon_pager-current.svg) no-repeat center/contain;
+      }
+    }
+  }
+
+  &__back {
+    width: rem(56);
+    margin: 0 56px;
+
+    @include sp {
+      width: rem(48);
+      margin: 0 48px;
+    }
+  }
+}
+
+
+/*====================================================
+
+header
+
+====================================================*/
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px;
+  background: #000;
+  z-index: 10;
+
+  @include sp {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 48px 24px;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(285);
+
+    @include sp {
+      position: static;
+      transform: translate(0, 0);
+      margin-bottom: 36px;
+    }
+  }
+
+  &__nav {
+    @include sp {
+      order: 3;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 0 40px;
+
+      @include sp {
+        gap: 0 32px;
+      }
+    }
+
+    &-item {
+      width: rem(56);
+
+      a {
+        position: relative;
+      }
+
+      &.current a::after {
+        content: '';
+        position: absolute;
+        top: rem(-5);
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: rem(48);
+        height: rem(46);
+        background: url(/img/icon_nav-current.svg) no-repeat center/contain;
+      }
+    }
+  }
+
+  &__sns {
+    width: 195px;
+
+    @include md {
+      width: 175px;
+    }
+
+    @include sp {
+      order: 2;
+      width: 100%;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 40px;
+
+      @include md {
+        gap: 8px 20px;
+      }
+
+      @include sp {
+        flex-wrap: nowrap;
+        gap: 0 20px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+
+/*====================================================
+
+TOP
+
+====================================================*/
+
+.top {
+  max-width: 920px;
+  margin-bottom: 60px;
+  padding: 0 40px;
+
+  @include sp {
+    padding: 0 24px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px 40px;
+
+    @include sp {
+      gap: 48px 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: calc(50% - 20px);
+    max-width: 400px;
+
+    @include sp {
+      width: 100%;
+    }
+
+    &-link {
+      display: block;
+
+      @include pc {
+        &:hover {
+          .top__item-detail {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+    &-detail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: url(/img/detail_bg.png) no-repeat center/60%;
+      opacity: 0;
+      visibility: hidden;
+      color: #000;
+
+      @include sp {
+        position: static;
+        height: rem(117);
+        background-size: 223px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-name {
+      margin-bottom: 4px;
+      font-family: $isego;
+      font-size: rem(24);
+    }
+
+    &-price {
+      font-family: $courier;
+      font-size: rem(24);
+      letter-spacing: -0.08em;
+      line-height: 1;
+    }
+  }
+}
+
+
+/*====================================================
+
+記事一覧
+
+====================================================*/
+
+.archive {
+  &__list {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 32px;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+    background: no-repeat center/100% auto;
+
+    @include sp {
+      background: no-repeat center/cover;
+    }
+
+    &:nth-of-type(odd) {
+      background-image: url(/img/ttl_bg01.png);
+    }
+
+    &:nth-of-type(even) {
+      background-image: url(/img/ttl_bg02.png);
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 720px;
+    height: 128px;
+    padding: 0 70px;
+
+    @include sp {
+      width: 100%;
+      min-height: 41vw;
+      padding: 30px 24px;
+    }
+  }
+
+  &__ttl {
+    margin-bottom: 8px;
+    font-family: $isego;
+    font-weight: 700;
+    font-size: rem(20);
+    color: #000;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  &__date {
+    color: #000;
+  }
+}
+
+
+/*====================================================
+
+記事
+
+====================================================*/
+
+.article {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 240px 960px;
+  max-width: 1280px;
+  padding: 0 40px;
+
+  @include md {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  &-side {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    margin-right: 40px;
+
+    @include md {
+      order: 3;
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    @include sp {
+      width: calc(100% - 48px);
+      margin: 0 24px;
+    }
+
+    &__list {
+      position: sticky;
+      top: 160px;
+
+      @include md {
+        position: static;
+      }
+    }
+
+    &__item {
+      position: relative;
+      padding: 24px 0;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: url(/img/border.svg) repeat-x;
+      }
+    }
+
+    &__link {
+      @include pc {
+        &:hover {
+          opacity: .6;
+        }
+      }
+    }
+
+    &__ttl {
+      margin-bottom: 12px;
+      font-size: rem(12);
+
+      @include md {
+        font-size: rem(16);
+      }
+    }
+
+    &__date {
+      color: #8D8D8D;
+    }
+  }
+
+  &-main {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    width: 720px;
+    margin: 0 auto 64px 0;
+
+    @include md {
+      order: 1;
+      margin: 0 auto 64px;
+    }
+
+    @include sp {
+      width: 100%;
+    }
+
+    &__ttl {
+      margin-bottom: 8px;
+      font-family: $isego;
+      font-weight: 700;
+      font-size: rem(20);
+      color: #000;
+      text-align: center;
+      line-height: 1.3;
+
+      &-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 720px;
+        height: 128px;
+        margin-bottom: 70px;
+        padding: 0 70px;
+        background: url(/img/ttl_bg01.png) no-repeat center/100% auto;
+
+        @include sp {
+          width: 100%;
+          min-height: 41vw;
+          margin-bottom: 40px;
+          padding: 30px 24px;
+          background-size: cover;
+        }
+      }
+    }
+
+    &__date {
+      color: #000;
+    }
+
+    &__txt {
+      max-width: 600px;
+      margin: 0 auto;
+
+      @include sp {
+        margin: 0 24px;
+      }
+
+      p {
+        line-height: 2;
+
+        &:not(:last-child) {
+          margin-bottom: 32px;
+        }
+      }
+
+      img {
+        margin: 56px 0;
+      }
+    }
+  }
+
+  .pager {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+
+    @include md {
+      order: 2;
+      margin-bottom: 72px;
+    }
+  }
+}
+
+
+/*====================================================
+
+footer
+
+====================================================*/
+
+.footer {
+  width: 100%;
+  padding: 80px 0;
+
+  &__anime {
+    display: flex;
+    transform: rotate(-5deg);
+    overflow: hidden;
+
+    .swiper-wrapper {
+      transition-timing-function: linear;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 78px;
+
+      @include sp {
+        height: 64px;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 84px;
+    margin-bottom: 24px;
+    font-family: $courier;
+    line-height: 1;
+    text-align: center;
+  }
+
+  &__sns {
+    &-list {
+      display: flex;
+      justify-content: center;
+      gap: 0 24px;
+    }
+
+    &-item {
+      width: 40px;
+    }
+  }
+}
+
+
+/*====================================================
+
+mixin, function, variable
+
+====================================================*/
+
+@mixin pc {
+  @media (min-width: (768px)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: (767px)) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: (1279px)) {
+    @content;
+  }
+}
+
+@function rem($pixels) {
+  @return $pixels / 16 * 1rem;
+}
+
+$courier: 'Courier Prime',
+monospace;
+$isego: Isego,
+san-serif;
