@@ -1,0 +1,28 @@
+.pager__num {
+  font-family: "Courier Prime", monospace;
+}
+
+.pager__num .dots {
+  font-size: 0;
+}
+
+.pager__num .dots:before {
+  font-size: 14px;
+  content: '...';
+}
+
+.page-numbers.current {
+  position: relative;
+}
+
+.page-numbers.current::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -46%);
+  display: block;
+  width: 2.1875rem;
+  height: 1.5rem;
+  background: url(../img/icon_pager-current.svg) no-repeat center/contain;
+}

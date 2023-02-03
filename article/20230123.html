@@ -6,6 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>記事</title>
+  <meta name="author" content="PINPIN">
+  <meta name="description" content="闇市 品品 電子版">
+  <meta name="copyright" content="PINPIN">
+  <meta name="format-detection" content="email=no,telephone=no,address=no">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="/img/ogimage.png">
+
+  <meta property="fb:app_id" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="品品 -PINPIN-">
+  <meta property="og:site_name" content="品品 -PINPIN-">
+  <meta property="og:description" content="闇市 品品 電子版">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="/img/ogimage.png">
+
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
   <script>
     (function (d) {
       var config = {
@@ -36,8 +57,9 @@
       s.parentNode.insertBefore(tk, s)
     })(document);
   </script>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="/js/app.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Noto+Serif+JP&display=swap" rel="stylesheet">
@@ -46,6 +68,8 @@
 </head>
 
 <body>
+  <div id="cursor"></div>
+
   <header class="header">
     <h1 class="header__logo"><a href="/"><img src="/img/logo.svg" alt=""></a></h1>
     <nav class="header__nav">
@@ -56,10 +80,18 @@
     </nav>
     <div class="header__sns">
       <ul class="header__sns-list">
-        <li class="header__sns-item"><a class="txt-link" href="" target="_blank" rel="noopener noreferrer">twitter</a></li>
-        <li class="header__sns-item"><a class="txt-link" href="" target="_blank" rel="noopener noreferrer">instagram</a></li>
-        <li class="header__sns-item"><a class="txt-link" href="" target="_blank" rel="noopener noreferrer">spotify</a></li>
-        <li class="header__sns-item"><a class="txt-link disabled" href="" target="_blank" rel="noopener noreferrer">discord</a></li>
+        <li class="header__sns-item">
+          <a class="txt-link" href="https://twitter.com/kikikaikaimkjtn" target="_blank" rel="noopener noreferrer">twitter</a>
+        </li>
+        <li class="header__sns-item">
+          <a class="txt-link" href="https://www.instagram.com/noto_954/" target="_blank" rel="noopener noreferrer">instagram</a>
+        </li>
+        <li class="header__sns-item">
+          <a class="txt-link" href="https://open.spotify.com/show/0DEV2gUjx4tgwBLpJFlX7j?si=a9314942ceac401a" target="_blank" rel="noopener noreferrer">spotify</a>
+        </li>
+        <li class="header__sns-item">
+          <a class="txt-link" href="https://discord.gg/HRHDaqey" target="_blank" rel="noopener noreferrer">discord</a>
+        </li>
       </ul>
     </div>
   </header>
@@ -139,77 +171,34 @@
   </main>
 
   <footer class="footer">
-    <div class="footer__anime swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img src="/img/icon_box.svg" alt="" />
-        </div>
+    <div class="footer__anime">
+      <div class="footer__anime-wrap">
+        <ul class="footer__anime-list"></ul>
+        <ul class="footer__anime-list"></ul>
       </div>
     </div>
 
-    <div class="footer__copyright">© ONLINE YAMI-ICHI PINPIN</div>
+    <div class="footer__copyright">©PINPIN</div>
 
     <div class="footer__sns">
       <ul class="footer__sns-list">
         <li class="footer__sns-item">
-          <a class="txt-link" href="" target="_blank" rel="noopener noreferrer">
+          <a class="txt-link" href="https://twitter.com/kikikaikaimkjtn" target="_blank" rel="noopener noreferrer">
             <img src="/img/icon_twitter.svg" alt="">
           </a>
         </li>
         <li class="footer__sns-item">
-          <a class="txt-link" href="" target="_blank" rel="noopener noreferrer">
+          <a class="txt-link" href="https://www.instagram.com/noto_954/" target="_blank" rel="noopener noreferrer">
             <img src="/img/icon_insta.svg" alt="">
           </a>
         </li>
         <li class="footer__sns-item">
-          <a class="txt-link" href="" target="_blank" rel="noopener noreferrer">
+          <a class="txt-link" href="https://open.spotify.com/show/0DEV2gUjx4tgwBLpJFlX7j?si=a9314942ceac401a" target="_blank" rel="noopener noreferrer">
             <img src="/img/icon_spotify.svg" alt="">
           </a>
         </li>
         <li class="footer__sns-item">
-          <a class="txt-link disabled" href="" target="_blank" rel="noopener noreferrer">
+          <a class="txt-link" href="https://discord.gg/HRHDaqey" target="_blank" rel="noopener noreferrer">
             <img src="/img/icon_discord.svg" alt="">
           </a>
         </li>
@@ -217,35 +206,5 @@
     </div>
   </footer>
 </body>
-
-<script>
-  const mySwiperWrapper = document.querySelector('.swiper-wrapper');
-  const swiper = new Swiper(".swiper", {
-    loop: true,
-    slidesPerView: 5,
-    breakpoints: {
-      768: {
-        slidesPerView: 12,
-      },
-      1650: {
-        slidesPerView: 15,
-      },
-    },
-    speed: 1500,
-    allowTouchMove: false,
-    autoplay: {
-      delay: 0,
-    },
-    spaceBetween: 25,
-    on: {
-      slideChangeTransitionStart: function () {
-        mySwiperWrapper.style.transitionTimingFunction = 'linear';
-      },
-      resize: function () {
-        swiper.autoplay.start();
-      }
-    }
-  });
-</script>
 
 </html>

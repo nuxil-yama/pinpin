@@ -5,6 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/img/ogimage.png">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/ogimage.png">
+
+  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/android-chrome.png" sizes="192x192">
+
   <script>
     (function (d) {
       var config = {
@@ -35,13 +45,14 @@
       s.parentNode.insertBefore(tk, s)
     })(document);
   </script>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Noto+Serif+JP&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/style.css">
-
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/reset.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/custom.css">
   <?php
   wp_head();

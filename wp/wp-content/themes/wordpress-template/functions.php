@@ -72,15 +72,15 @@ add_theme_support('post-thumbnails');
 // add_filter('wpseo_canonical', '__return_false');
 
 /*
- * お知らせ ====================================================
+ * 記事 ====================================================
  */
-add_action('init', 'my_custom_news');
-function my_custom_news()
+add_action('init', 'my_custom_article');
+function my_custom_article()
 {
     $labels = [
-        'name' => _x('お知らせ', 'post type general name'),
-        'singular_name' => _x('news', 'post type singular name'),
-        'add_new' => _x('新しくお知らせを書く', 'news'),
+        'name' => _x('記事', 'post type general name'),
+        'singular_name' => _x('article', 'post type singular name'),
+        'add_new' => _x('新しくお知らせを書く', 'article'),
         'add_new_item' => __('お知らせ記事を書く'),
         'edit_item' => __('お知らせ記事を編集'),
         'new_item' => __('新しいお知らせ記事'),
@@ -97,7 +97,7 @@ function my_custom_news()
         'show_ui' => true,
         'query_var' => true,
         'rewrite' => [
-            'slug' => 'news',
+            'slug' => 'article',
             'with_front' => false,
         ],
         'capability_type' => 'post',
@@ -106,17 +106,17 @@ function my_custom_news()
         'supports' => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
         'has_archive' => true,
     ];
-    register_post_type('news', $args);
+    register_post_type('article', $args);
 }
 /* ---- お知らせタクソノミー追加 ---- **/
-add_action('init', 'create_newscat_taxonomy', '0');
-function create_newscat_taxonomy()
+add_action('init', 'create_articlecat_taxonomy', '0');
+function create_articlecat_taxonomy()
 {
     $taxonomylabels = [
-        'name' => _x('newscat', 'post type general name'),
-        'singular_name' => _x('newscat', 'post type singular name'),
-        'search_items' => __('newscat'),
-        'all_items' => __('newscat'),
+        'name' => _x('articlecat', 'post type general name'),
+        'singular_name' => _x('articlecat', 'post type singular name'),
+        'search_items' => __('articlecat'),
+        'all_items' => __('articlecat'),
         'parent_item' => __('Parent Cat'),
         'parent_item_colon' => __('Parent Cat:'),
         'edit_item' => __('お知らせカテゴリーを編集'),
@@ -129,7 +129,15 @@ function create_newscat_taxonomy()
         'has_archive' => true,
         'show_ui' => true,
         'query_var' => true,
-        'rewrite' => ['slug' => 'newscat'],
+        'rewrite' => ['slug' => 'articlecat'],
     ];
-    register_taxonomy('newscat', 'news', $args);
+    register_taxonomy('articlecat', 'article', $args);
 }
+
+add_filter('number_format_i18n',function($format){
+	$number = intval( $format );
+	if( intval( $number / 10 ) > 0 ) {
+		return $format;
+	}
+	return '0' . $format;
+});
